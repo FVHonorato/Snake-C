@@ -74,22 +74,22 @@ void process_input(){
 
     case SDL_KEYDOWN:
       if(event.key.keysym.sym == SDLK_UP){
-        if(direction != 3 && snake.x > 0 || direction != 3 && snake.x < window_size[0])
+        if(direction != 3)
           direction = 1; 
       }
       
       if(event.key.keysym.sym == SDLK_DOWN){
-        if(direction != 1  && snake.x > 0 || direction != 1 && snake.x < window_size[0])
+        if(direction != 1)
           direction = 3; 
       }
             
       if(event.key.keysym.sym == SDLK_LEFT){
-        if(direction != 4 && snake.y > 0 || direction != 4 && snake.y < window_size[1])
+        if(direction != 4)
           direction = 2;
       }
 
       if(event.key.keysym.sym == SDLK_RIGHT){
-        if(direction != 2 && snake.y > 0 || direction != 2 && snake.y < window_size[1])
+        if(direction != 2)
           direction = 4;
       }
       
