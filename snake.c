@@ -173,16 +173,16 @@ void update(){
 
   //to no exit of window
   if(snake.x > window_size[0])
-    snake.x = -10;
+    snake.x = 0;
   
   if(snake.y > window_size[1])
-      snake.y = -10;
+      snake.y = 0;
 
   if(snake.x < 0)
-    snake.x = window_size[0];
+    snake.x = window_size[0]-10;
 
   if(snake.y < 0)
-    snake.y = window_size[1];
+    snake.y = window_size[1]-10;
 
   SDL_Delay(speed);
 }
