@@ -32,7 +32,7 @@ struct apple{
 int direction;
 int steps;
 int speed;
-int snake_size[2][100];
+int snake_size[2][1000];
 int snake_count;
 
 
@@ -114,7 +114,7 @@ void setup(){
   snake_count = 10; 
   steps = 10; 
   direction = 4;
-  speed = 100;
+  speed = 50;
 
   snake.x = 400;
   snake.y = 300;
