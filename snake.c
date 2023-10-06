@@ -111,7 +111,7 @@ void process_input(){
 
 //fuction with the configurations
 void setup(){
-  snake_count = 10; 
+  snake_count = 100; 
   steps = 10; 
   direction = 4;
   speed = 50;
@@ -154,6 +154,12 @@ void update(){
     }
     snake_size[0][i] = snake.x;
     snake_size[1][i] = snake.y;  
+  }
+
+  for(int i=0;i<snake_count;i++){
+    if(snake.x == snake_size[0][i] && snake.y == snake_size[1][i])
+      snake_count = 6;
+
   }
   
   //apple position
@@ -201,13 +207,22 @@ void render(){
   SDL_RenderFillRect(renderer, &fild_rect_DOWN);
 
   //render apple
-  SDL_SetRenderDrawColor(renderer, 100,20,10,255);
+  SDL_SetRenderDrawColor(renderer, 255,0,0,255);
   SDL_Rect apple_rect = {apple.x, apple.y, apple.w, apple.h};
   SDL_RenderFillRect(renderer, &apple_rect);
 
-  //draw snake
-  SDL_SetRenderDrawColor(renderer, 0,0,0,255);  
+  //draw snake  
   for(int i=0;i<=snake_count;i++){
+    if(snake_count >10){
+      if(i%2 == 0){
+        SDL_SetRenderDrawColor(renderer, 150,250,150,255);
+      }else{
+        SDL_SetRenderDrawColor(renderer, 50,250,50,255);
+      }
+    }else{
+      SDL_SetRenderDrawColor(renderer, 0,0,0,255);
+    }
+
     SDL_Rect snake_rect = {snake_size[0][i], snake_size[1][i], snake.w, snake.h};
     SDL_RenderFillRect(renderer, &snake_rect);
     
